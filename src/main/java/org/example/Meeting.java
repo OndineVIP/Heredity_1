@@ -23,6 +23,7 @@ public class Meeting extends Task {
     public String getStart() {
         return start;
     }
+
     @Override
     public boolean matches(String query) {
         if (topic.contains(query)) {
@@ -31,11 +32,6 @@ public class Meeting extends Task {
         if (project.contains(query)) {
             return true;
         }
-        return false;
-    }
-
-    @Override
-    public boolean equals(String query) {
         return false;
     }
 

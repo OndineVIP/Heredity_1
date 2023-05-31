@@ -28,10 +28,5 @@ public class Epic extends Task {
         return false;
     }
 
-    @Override
-    public boolean equals(String query) {
-        return false;
-
-    }
-}
+  }
 

@@ -37,5 +37,4 @@ public abstract class Task {
         return false;
     }
 
-    public abstract boolean equals(String query);
-}
+    }
