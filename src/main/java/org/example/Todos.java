@@ -30,4 +30,7 @@ public class Todos {
     public Task[] findAll() {
         return tasks;
     }
+    public Task[] search(String query) {
+        return tasks;
+    }
 }
