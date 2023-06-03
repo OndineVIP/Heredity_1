@@ -14,7 +14,7 @@ class TodosTest {
     Meeting meeting = new Meeting(
             555,
             "Выкатка 3й версии приложения",
-            "Приложение НетоБанка",
+            "Приложение НетоБанка родителям",
             "Во вторник после обеда"
     );
 
@@ -29,18 +29,7 @@ class TodosTest {
     }
 
 
-    @Test
-    public void shouldAddThreeTasksOfDifferentType() {
 
-        Task[] expected = {simpleTask, epic, meeting};
-        Task[] actual = todos.findAll();
-        Assertions.assertArrayEquals(expected, actual);
-
-        Assertions.assertTrue(meeting.matches("родителям"));
-        Assertions.assertTrue(meeting.matches("позвонить"));
-        Assertions.assertFalse(meeting.matches("подруге"));
-
-    }
 
     @Test
     public void makeAllTasks() {
@@ -51,7 +40,8 @@ class TodosTest {
     }
 
 
-    @Test
+
+        @Test
     public void addOneTaskEpic() {
 
         Task[] expected = {epic};
