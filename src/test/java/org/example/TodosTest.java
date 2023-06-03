@@ -52,10 +52,10 @@ class TodosTest {
 
 
     @Test
-    public void addOneSimpleTask() {
+    public void addOneTaskEpic() {
 
-        Task[] expected = {simpleTask};
-        Task[] actual = todos.search("родителям");
+        Task[] expected = {epic};
+        Task[] actual = todos.search("Хлеб");
         Assertions.assertArrayEquals(expected, actual);
 
     }
@@ -64,7 +64,7 @@ class TodosTest {
     public void NoTasksAtAll() {
 
         Task[] expected = {simpleTask, epic, meeting};
-        Task[] actual = todos.search(" - ");
+        Task[] actual = todos.search("");
         Assertions.assertArrayEquals(expected, actual);
     }
 

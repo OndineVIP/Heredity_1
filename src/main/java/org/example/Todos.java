@@ -30,7 +30,14 @@ public class Todos {
     public Task[] findAll() {
         return tasks;
     }
+
     public Task[] search(String query) {
-        return tasks;
+        Task[] result = new Task[0];
+        for(Task task : tasks){
+            if(task.matches(query)){
+                result = addToArray(result, task);
+            }
+        }
+        return result;
     }
 }
