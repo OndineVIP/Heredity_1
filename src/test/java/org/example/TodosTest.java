@@ -27,11 +27,36 @@ class TodosTest {
         todos.add(epic);
         todos.add(meeting);
     }
+    @Test
+    public void shouldSearchEpic() {
 
+        Task[] expected = {epic};
+        Task[] actual = todos.search("Яйца");
 
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldSearchMeeting() {
 
+        Task[] expected = {meeting};
+        Task[] actual = todos.search("Выкатка");
+
+    }
 
     @Test
+    public void shouldSearchSimpleTask() {
+        Task[] expected = {simpleTask};
+        Task[] actual = todos.search("Позвонить");
+    }
+    @Test
+
+    public void shouldSearchTaskOne() {
+        Task[] expected = {};
+        Task[] actual = todos.search("после");
+
+    }
+
+        @Test
     public void makeAllTasks() {
 
         Task[] expected = {simpleTask, epic, meeting};
@@ -39,16 +64,6 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-
-
-        @Test
-    public void addOneTaskEpic() {
-
-        Task[] expected = {epic};
-        Task[] actual = todos.search("Хлеб");
-        Assertions.assertArrayEquals(expected, actual);
-
-    }
 
     @Test
     public void NoTasksAtAll() {
